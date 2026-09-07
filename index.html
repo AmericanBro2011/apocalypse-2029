@@ -21,13 +21,13 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Hide scrollbar but keep scrolling */
+/* Hide scrollbar but preserve scrolling */
 html {
     scrollbar-width: none;
 }
 
-body::-webkit-scrollbar,
-html::-webkit-scrollbar {
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
     display: none;
 }
 
@@ -120,7 +120,9 @@ button {
 }
 
 
-/* HEADER */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 header {
     background: #151515;
@@ -181,7 +183,7 @@ nav {
 
 
 /* =========================================================
-   CONTENT AREA
+   CONTENT
    ========================================================= */
 
 main {
@@ -208,10 +210,8 @@ main {
     margin-bottom: 42px;
     padding: 28px 30px;
     background: #111111;
+    border: 1px solid #292929;
     border-left: 3px solid #922828;
-    border-top: 1px solid #292929;
-    border-right: 1px solid #292929;
-    border-bottom: 1px solid #292929;
     color: #cfcfcf;
     line-height: 1.7;
 }
@@ -256,7 +256,7 @@ main {
 }
 
 .overview-card ul {
-    margin: 12px 0 0;
+    margin: 12px 0 16px;
     padding-left: 20px;
     color: #b8b8b8;
 }
@@ -266,26 +266,56 @@ main {
     line-height: 1.5;
 }
 
+
+/* =========================================================
+   WHERE TO GO NEXT
+   ========================================================= */
+
 .next-links {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 18px;
+    gap: 16px;
+    margin-top: 22px;
 }
 
 .next-link {
+    width: 100%;
     background: #0d0d0d;
-    border: 1px solid #2a2a2a;
-    padding: 16px;
-    color: #cfcfcf;
+    border: 1px solid #303030;
+    color: #d5d5d5;
+
+    padding: 26px 16px;
+
     text-align: center;
+
     font-size: 12px;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+.next-link:hover {
+    background: #171010;
+    border-color: #9b2b2b;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.next-link:active {
+    background: #8e2727;
+    border-color: #a93636;
+    transform: translateY(0);
 }
 
 
 /* =========================================================
-   PLACEHOLDER
+   PLACEHOLDERS
    ========================================================= */
 
 .placeholder {
@@ -329,6 +359,11 @@ main {
     nav {
         padding: 0 8px;
         overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
     }
 
     .nav-button {
@@ -398,7 +433,7 @@ main {
 
 
 <!-- ========================================================
-     MAIN GAME INTERFACE
+     MAIN INTERFACE
      ======================================================== -->
 
 <section id="mainInterface">
@@ -417,36 +452,40 @@ main {
 </header>
 
 
-
 <nav>
 
     <button
         class="nav-button active"
-        onclick="openSection('overview', this)">
+        data-section="overview"
+        onclick="openSection('overview')">
         OVERVIEW
     </button>
 
     <button
         class="nav-button"
-        onclick="openSection('rules', this)">
+        data-section="rules"
+        onclick="openSection('rules')">
         RULES
     </button>
 
     <button
         class="nav-button"
-        onclick="openSection('howtoplay', this)">
+        data-section="howtoplay"
+        onclick="openSection('howtoplay')">
         HOW TO PLAY
     </button>
 
     <button
         class="nav-button"
-        onclick="openSection('world', this)">
+        data-section="world"
+        onclick="openSection('world')">
         CREATE / JOIN WORLD
     </button>
 
     <button
         class="nav-button"
-        onclick="openSection('reference', this)">
+        data-section="reference"
+        onclick="openSection('reference')">
         REFERENCE
     </button>
 
@@ -457,314 +496,377 @@ main {
 <main>
 
 
-    <!-- OVERVIEW -->
+<!-- ========================================================
+     OVERVIEW
+     ======================================================== -->
 
-    <section
-        id="overview"
-        class="content-section active">
+<section id="overview" class="content-section active">
 
-        <div class="overview-intro">
-            <strong>Apocalypse 2029</strong> is a tabletop-style roleplaying game set during a global zombie apocalypse.
-            One player serves as the Game Master, while the others control individual survivors.
-            The game is not built around one fixed story. Each World develops through the choices of its Game Master and players.
+
+    <div class="overview-intro">
+
+        <strong>Apocalypse 2029</strong> is a tabletop-style roleplaying
+        game set during a global zombie apocalypse. One player serves as
+        the Game Master, while the others control individual survivors.
+        The game is not built around one fixed story. Each World develops
+        through the choices of its Game Master and players.
+
+    </div>
+
+
+    <div class="overview-grid">
+
+
+        <div class="overview-card wide">
+
+            <h2>WHAT IS APOCALYPSE 2029?</h2>
+
+            <p>
+                Apocalypse 2029 is designed to be played in the general
+                style of a traditional tabletop roleplaying game. The Game
+                Master describes the world, controls its dangers and
+                inhabitants, and determines how events unfold.
+            </p>
+
+            <p>
+                Players decide what their survivors do, where they go,
+                who they trust, and what risks they are willing to take.
+            </p>
+
+            <p>
+                There is no single predetermined story. Each World
+                develops through play.
+            </p>
+
         </div>
 
 
-        <div class="overview-grid">
 
-
-            <div class="overview-card wide">
-
-                <h2>WHAT IS APOCALYPSE 2029?</h2>
-
-                <p>
-                    Apocalypse 2029 is designed to be played in the general style of a traditional tabletop roleplaying game.
-                    The Game Master describes the world, controls its dangers and inhabitants, and determines how events unfold.
-                </p>
-
-                <p>
-                    Players decide what their survivors do, where they go, who they trust, and what risks they are willing to take.
-                </p>
-
-                <p>
-                    There is no single predetermined story. Each World develops through play.
-                </p>
-
-            </div>
-
-
-            <div class="overview-card">
-
-                <h2>THE WORLD</h2>
-
-                <p>
-                    Apocalypse 2029 takes place in a world based on the real Earth of 2029.
-                </p>
-
-                <p>
-                    Cities, towns, roads, regions, buildings, governments, infrastructure, and geography may all form part of play.
-                </p>
-
-                <p>
-                    The apocalypse transforms that world. Some places may remain organized. Others may collapse completely.
-                    Some communities may survive. Others may become dangerous.
-                </p>
-
-                <p>
-                    The exact condition of the world depends on the World being played.
-                </p>
-
-            </div>
-
-
-            <div class="overview-card">
-
-                <h2>HOW THE GAME WORKS</h2>
-
-                <p>
-                    A game of Apocalypse 2029 takes place inside a World.
-                </p>
-
-                <p>
-                    A World is created by a Game Master and joined by players.
-                    Within that World, players control survivors and make decisions through roleplay.
-                </p>
-
-                <p>
-                    The Game Master presents situations, locations, people, threats, and consequences.
-                    Players respond by describing what their survivors attempt to do.
-                </p>
-
-                <p>
-                    The rules determine how uncertain or dangerous actions are resolved.
-                    Over time, the World changes according to what happens during play.
-                </p>
-
-            </div>
-
-
-            <div class="overview-card">
-
-                <h2>THE GAME MASTER</h2>
-
-                <p>
-                    The Game Master is responsible for running the World.
-                </p>
-
-                <ul>
-                    <li>Describe locations and events</li>
-                    <li>Control non-player characters</li>
-                    <li>Present dangers and opportunities</li>
-                    <li>Decide what information players discover</li>
-                    <li>Manage consequences</li>
-                    <li>Create larger goals and story arcs</li>
-                    <li>Respond to unexpected player decisions</li>
-                    <li>Shape the state of the World</li>
-                </ul>
-
-                <p>
-                    The Game Master does not simply read a predetermined story.
-                    The World is meant to respond to the players.
-                </p>
-
-            </div>
-
-
-            <div class="overview-card">
-
-                <h2>THE PLAYERS</h2>
-
-                <p>
-                    Each player controls a survivor.
-                </p>
-
-                <ul>
-                    <li>What their survivor says</li>
-                    <li>What their survivor attempts</li>
-                    <li>Where they go</li>
-                    <li>Who they trust</li>
-                    <li>What they carry</li>
-                    <li>What risks they accept</li>
-                    <li>What goals they pursue</li>
-                </ul>
-
-                <p>
-                    Players are not expected to follow a single predetermined path.
-                    Their decisions help create the story of the World.
-                </p>
-
-            </div>
-
-
-            <div class="overview-card">
-
-                <h2>WORLDS</h2>
-
-                <p>
-                    A World is an individual Apocalypse 2029 game.
-                </p>
-
-                <p>
-                    Each World may have its own Game Master, players, survivors, starting location, history,
-                    major events, settlements, factions, goals, and consequences.
-                </p>
-
-                <p>
-                    Different Worlds can begin in the same location and develop in completely different ways.
-                </p>
-
-                <p>
-                    Creating a World does not create a match.
-                    It creates an ongoing roleplaying setting.
-                </p>
-
-            </div>
-
-
-            <div class="overview-card">
-
-                <h2>SURVIVORS</h2>
-
-                <p>
-                    A survivor is a player's character within a World.
-                </p>
-
-                <p>
-                    Survivors may differ in background, skills, personality, equipment, relationships,
-                    injuries, knowledge, and experience.
-                </p>
-
-                <p>
-                    A survivor is more than a set of numbers.
-                    The player decides who that person is and how that person responds to the collapse of the world around them.
-                </p>
-
-            </div>
-
-
-            <div class="overview-card wide">
-
-                <h2>THE LARGER NARRATIVE</h2>
-
-                <p>
-                    Apocalypse 2029 is not built around one universal final objective.
-                </p>
-
-                <p>
-                    Instead, Worlds may develop through major goals or narrative arcs.
-                    A group may spend part of its story trying to escape an infected city.
-                    Later, its goal may become finding shelter, protecting a settlement,
-                    locating someone, dealing with a rival group, or discovering what happened elsewhere.
-                </p>
-
-                <p>
-                    The larger story grows from the events of the World.
-                </p>
-
-            </div>
-
-
-            <div class="overview-card wide">
-
-                <h2>WHAT MAKES APOCALYPSE 2029 DIFFERENT?</h2>
-
-                <p>
-                    Apocalypse 2029 is intended to combine tabletop roleplaying, survival, exploration,
-                    real-world geography, persistent Worlds, player-driven decisions, Game Master freedom,
-                    detailed locations, and long-form storytelling.
-                </p>
-
-                <p>
-                    The goal is not simply to defeat zombies.
-                    The goal is to roleplay what happens when ordinary human decisions are placed inside extraordinary circumstances.
-                </p>
-
-            </div>
-
-
-            <div class="overview-card wide">
-
-                <h2>WHERE TO GO NEXT</h2>
-
-                <div class="next-links">
-                    <div class="next-link">HOW TO PLAY</div>
-                    <div class="next-link">RULES</div>
-                    <div class="next-link">CREATE / JOIN WORLD</div>
-                    <div class="next-link">REFERENCE</div>
-                </div>
-
-            </div>
-
+        <div class="overview-card">
+
+            <h2>THE WORLD</h2>
+
+            <p>
+                Apocalypse 2029 takes place in a world based on the real
+                Earth of 2029.
+            </p>
+
+            <p>
+                Cities, towns, roads, regions, buildings, governments,
+                infrastructure, and geography may all form part of play.
+            </p>
+
+            <p>
+                The apocalypse transforms that world. Some places may
+                remain organized. Others may collapse completely. Some
+                communities may survive. Others may become dangerous.
+            </p>
+
+            <p>
+                The exact condition of the world depends on the World
+                being played.
+            </p>
 
         </div>
 
-    </section>
 
 
+        <div class="overview-card">
 
-    <!-- RULES -->
+            <h2>HOW THE GAME WORKS</h2>
 
-    <section
-        id="rules"
-        class="content-section">
+            <p>
+                A game of Apocalypse 2029 takes place inside a World.
+            </p>
 
-        <div class="placeholder">
-            CONTENT WILL APPEAR HERE
+            <p>
+                A World is created by a Game Master and joined by players.
+                Within that World, players control survivors and make
+                decisions through roleplay.
+            </p>
+
+            <p>
+                The Game Master presents situations, locations, people,
+                threats, and consequences. Players respond by describing
+                what their survivors attempt to do.
+            </p>
+
+            <p>
+                The rules determine how uncertain or dangerous actions
+                are resolved. Over time, the World changes according to
+                what happens during play.
+            </p>
+
         </div>
 
-    </section>
 
 
+        <div class="overview-card">
 
-    <!-- HOW TO PLAY -->
+            <h2>THE GAME MASTER</h2>
 
-    <section
-        id="howtoplay"
-        class="content-section">
+            <p>
+                The Game Master is responsible for running the World.
+            </p>
 
-        <div class="placeholder">
-            CONTENT WILL APPEAR HERE
+            <ul>
+                <li>Describe locations and events</li>
+                <li>Control non-player characters</li>
+                <li>Present dangers and opportunities</li>
+                <li>Decide what information players discover</li>
+                <li>Manage consequences</li>
+                <li>Create larger goals and story arcs</li>
+                <li>Respond to unexpected player decisions</li>
+                <li>Shape the state of the World</li>
+            </ul>
+
+            <p>
+                The Game Master does not simply read a predetermined
+                story. The World is meant to respond to the players.
+            </p>
+
         </div>
 
-    </section>
 
 
+        <div class="overview-card">
 
-    <!-- CREATE / JOIN WORLD -->
+            <h2>THE PLAYERS</h2>
 
-    <section
-        id="world"
-        class="content-section">
+            <p>
+                Each player controls a survivor.
+            </p>
 
-        <div class="placeholder">
-            CONTENT WILL APPEAR HERE
+            <ul>
+                <li>What their survivor says</li>
+                <li>What their survivor attempts</li>
+                <li>Where they go</li>
+                <li>Who they trust</li>
+                <li>What they carry</li>
+                <li>What risks they accept</li>
+                <li>What goals they pursue</li>
+            </ul>
+
+            <p>
+                Players are not expected to follow a single predetermined
+                path. Their decisions help create the story of the World.
+            </p>
+
         </div>
 
-    </section>
 
 
+        <div class="overview-card">
 
-    <!-- REFERENCE -->
+            <h2>WORLDS</h2>
 
-    <section
-        id="reference"
-        class="content-section">
+            <p>
+                A World is an individual Apocalypse 2029 game.
+            </p>
 
-        <div class="placeholder">
-            CONTENT WILL APPEAR HERE
+            <p>
+                Each World may have its own Game Master, players,
+                survivors, starting location, history, major events,
+                settlements, factions, goals, and consequences.
+            </p>
+
+            <p>
+                Different Worlds can begin in the same location and
+                develop in completely different ways.
+            </p>
+
+            <p>
+                Creating a World does not create a match. It creates an
+                ongoing roleplaying setting.
+            </p>
+
         </div>
 
-    </section>
+
+
+        <div class="overview-card">
+
+            <h2>SURVIVORS</h2>
+
+            <p>
+                A survivor is a player's character within a World.
+            </p>
+
+            <p>
+                Survivors may differ in background, skills, personality,
+                equipment, relationships, injuries, knowledge, and
+                experience.
+            </p>
+
+            <p>
+                A survivor is more than a set of numbers. The player
+                decides who that person is and how that person responds
+                to the collapse of the world around them.
+            </p>
+
+        </div>
+
+
+
+        <div class="overview-card wide">
+
+            <h2>THE LARGER NARRATIVE</h2>
+
+            <p>
+                Apocalypse 2029 is not built around one universal final
+                objective.
+            </p>
+
+            <p>
+                Instead, Worlds may develop through major goals or
+                narrative arcs. A group may spend part of its story
+                trying to escape an infected city. Later, its goal may
+                become finding shelter, protecting a settlement, locating
+                someone, dealing with a rival group, or discovering what
+                happened elsewhere.
+            </p>
+
+            <p>
+                The larger story grows from the events of the World.
+            </p>
+
+        </div>
+
+
+
+        <div class="overview-card wide">
+
+            <h2>WHAT MAKES APOCALYPSE 2029 DIFFERENT?</h2>
+
+            <p>
+                Apocalypse 2029 is intended to combine tabletop
+                roleplaying, survival, exploration, real-world geography,
+                persistent Worlds, player-driven decisions, Game Master
+                freedom, detailed locations, and long-form storytelling.
+            </p>
+
+            <p>
+                The goal is not simply to defeat zombies. The goal is to
+                roleplay what happens when ordinary human decisions are
+                placed inside extraordinary circumstances.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             INTERACTIVE NEXT PAGE BUTTONS
+             ================================================= -->
+
+        <div class="overview-card wide">
+
+            <h2>WHERE TO GO NEXT</h2>
+
+            <div class="next-links">
+
+                <button
+                    class="next-link"
+                    onclick="openSection('howtoplay')">
+                    HOW TO PLAY
+                </button>
+
+                <button
+                    class="next-link"
+                    onclick="openSection('rules')">
+                    RULES
+                </button>
+
+                <button
+                    class="next-link"
+                    onclick="openSection('world')">
+                    CREATE / JOIN WORLD
+                </button>
+
+                <button
+                    class="next-link"
+                    onclick="openSection('reference')">
+                    REFERENCE
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================
+     RULES
+     ======================================================== -->
+
+<section id="rules" class="content-section">
+
+    <div class="placeholder">
+        CONTENT WILL APPEAR HERE
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================
+     HOW TO PLAY
+     ======================================================== -->
+
+<section id="howtoplay" class="content-section">
+
+    <div class="placeholder">
+        CONTENT WILL APPEAR HERE
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================
+     CREATE / JOIN WORLD
+     ======================================================== -->
+
+<section id="world" class="content-section">
+
+    <div class="placeholder">
+        CONTENT WILL APPEAR HERE
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================
+     REFERENCE
+     ======================================================== -->
+
+<section id="reference" class="content-section">
+
+    <div class="placeholder">
+        CONTENT WILL APPEAR HERE
+    </div>
+
+</section>
 
 
 </main>
-
 
 </section>
 
 
 
 <script>
+
+
+/* =========================================================
+   ENTER GAME
+   ========================================================= */
 
 async function enterGame() {
 
@@ -791,7 +893,12 @@ async function enterGame() {
 }
 
 
-function openSection(sectionId, clickedButton) {
+
+/* =========================================================
+   PAGE NAVIGATION
+   ========================================================= */
+
+function openSection(sectionId) {
 
     const sections =
         document.querySelectorAll(".content-section");
@@ -800,23 +907,31 @@ function openSection(sectionId, clickedButton) {
         section.classList.remove("active");
     });
 
+
     const buttons =
         document.querySelectorAll(".nav-button");
 
     buttons.forEach(function(button) {
+
         button.classList.remove("active");
+
+        if (button.dataset.section === sectionId) {
+            button.classList.add("active");
+        }
+
     });
+
 
     document
         .getElementById(sectionId)
         .classList.add("active");
 
-    clickedButton.classList.add("active");
 
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
+
 }
 
 </script>
