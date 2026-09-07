@@ -14,29 +14,109 @@
     body {
         margin: 0;
         min-height: 100vh;
-        background: #0b0b0b;
-        color: #e8e8e8;
+        background: #090909;
+        color: #eeeeee;
         font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* TOP HEADER */
+    button {
+        font-family: inherit;
+    }
+
+    /* ==============================
+       OPENING SCREEN
+       ============================== */
+
+    #titleScreen {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background:
+            linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.75)),
+            #0a0a0a;
+    }
+
+    .title-box {
+        width: 90%;
+        max-width: 900px;
+    }
+
+    .game-title {
+        font-size: 58px;
+        letter-spacing: 12px;
+        margin: 0;
+        color: #f1f1f1;
+    }
+
+    .game-subtitle {
+        color: #777;
+        letter-spacing: 5px;
+        font-size: 12px;
+        margin-top: 16px;
+    }
+
+    .red-line {
+        width: 90px;
+        height: 3px;
+        background: #992b2b;
+        margin: 38px auto;
+    }
+
+    .system-online {
+        color: #a83232;
+        letter-spacing: 3px;
+        font-size: 12px;
+        margin-bottom: 28px;
+    }
+
+    .welcome {
+        font-size: 27px;
+        letter-spacing: 3px;
+        margin-bottom: 40px;
+    }
+
+    .play-button {
+        background: transparent;
+        color: #eeeeee;
+        border: 1px solid #6f1f1f;
+        padding: 16px 65px;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 4px;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    .play-button:hover {
+        background: #8f2525;
+        border-color: #8f2525;
+    }
+
+    /* ==============================
+       MAIN INTERFACE
+       ============================== */
+
+    #mainInterface {
+        display: none;
+        min-height: 100vh;
+    }
 
     header {
-        background: #161616;
-        border-bottom: 3px solid #8b1e1e;
-        padding: 28px 45px 24px;
+        background: #151515;
+        border-bottom: 3px solid #8d2525;
+        padding: 27px 60px 24px;
     }
 
-    .title {
-        margin: 0;
+    .header-title {
         font-size: 34px;
         letter-spacing: 7px;
-        font-weight: 700;
-        color: #f2f2f2;
+        font-weight: bold;
     }
 
-    .subtitle {
-        margin-top: 7px;
+    .header-subtitle {
+        margin-top: 8px;
         color: #777;
         font-size: 11px;
         letter-spacing: 3px;
@@ -45,12 +125,11 @@
     /* NAVIGATION */
 
     nav {
-        background: #111;
+        background: #101010;
         border-bottom: 1px solid #292929;
-        padding: 0 45px;
+        padding: 0 60px;
         display: flex;
-        align-items: center;
-        gap: 4px;
+        align-items: stretch;
     }
 
     nav button {
@@ -58,91 +137,113 @@
         color: #aaa;
         border: none;
         border-bottom: 3px solid transparent;
-        padding: 19px 22px 16px;
+        padding: 20px 30px 17px;
         font-size: 12px;
         font-weight: bold;
         letter-spacing: 1.5px;
         cursor: pointer;
+        white-space: nowrap;
     }
 
     nav button:hover {
-        color: #fff;
-        background: #181818;
+        color: #ffffff;
+        background: #171717;
     }
 
     nav button.active {
-        color: #fff;
-        border-bottom-color: #a32626;
+        color: #ffffff;
+        border-bottom-color: #a12c2c;
     }
 
-    /* PAGE BODY */
+    /* CONTENT */
 
     main {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 65px 45px;
+        max-width: 1400px;
+        margin: auto;
+        padding: 75px 60px 110px;
     }
 
-    .section-label {
-        color: #9b2727;
-        font-size: 11px;
-        font-weight: bold;
+    .content-section {
+        display: none;
+    }
+
+    .content-section.active {
+        display: block;
+    }
+
+    .section-title {
+        font-size: 42px;
         letter-spacing: 3px;
-        margin-bottom: 14px;
-    }
-
-    h1 {
         margin: 0;
-        font-size: 38px;
-        letter-spacing: 2px;
         font-weight: 600;
     }
 
-    .line {
-        width: 55px;
+    .section-line {
+        width: 70px;
         height: 3px;
-        background: #8b1e1e;
-        margin-top: 24px;
+        background: #922626;
+        margin-top: 26px;
+        margin-bottom: 55px;
     }
 
     .placeholder {
-        margin-top: 45px;
-        background: #131313;
         border: 1px solid #292929;
-        border-left: 3px solid #8b1e1e;
-        padding: 28px;
+        border-left: 3px solid #922626;
+        background: #111;
+        padding: 32px 38px;
         color: #777;
-        letter-spacing: 1px;
+        font-size: 14px;
+        letter-spacing: 2px;
     }
 
     /* FOOTER */
 
     footer {
         position: fixed;
-        bottom: 0;
         left: 0;
         right: 0;
+        bottom: 0;
         background: #0e0e0e;
-        border-top: 1px solid #222;
-        padding: 13px 45px;
+        border-top: 1px solid #242424;
+        padding: 14px 60px;
         color: #555;
         font-size: 10px;
         letter-spacing: 2px;
     }
 
-    .status {
-        color: #9b2727;
+    .footer-status {
         float: right;
+        color: #9b2b2b;
+    }
+
+    .return-title {
+        background: none;
+        border: none;
+        color: #555;
+        padding: 0;
+        font-size: 10px;
+        letter-spacing: 2px;
+        cursor: pointer;
+    }
+
+    .return-title:hover {
+        color: #aaa;
     }
 
     /* MOBILE */
 
-    @media (max-width: 800px) {
+    @media (max-width: 850px) {
+
+        .game-title {
+            font-size: 34px;
+            letter-spacing: 6px;
+        }
+
         header {
             padding: 22px;
         }
 
-        .title {
+        .header-title {
             font-size: 25px;
             letter-spacing: 4px;
         }
@@ -153,51 +254,256 @@
         }
 
         nav button {
-            white-space: nowrap;
-            padding: 17px 14px 14px;
+            padding: 17px 16px 14px;
             font-size: 10px;
         }
 
         main {
-            padding: 45px 22px;
+            padding: 50px 22px 100px;
         }
 
         footer {
-            padding: 12px 22px;
+            padding: 13px 22px;
+        }
+
+        .section-title {
+            font-size: 32px;
         }
     }
 </style>
 </head>
 
+
 <body>
 
+<!-- ==================================================
+     OPENING SCREEN
+     ================================================== -->
+
+<section id="titleScreen">
+
+    <div class="title-box">
+
+        <h1 class="game-title">APOCALYPSE 2029</h1>
+
+        <div class="game-subtitle">
+            SURVIVAL ROLEPLAYING SYSTEM
+        </div>
+
+        <div class="red-line"></div>
+
+        <div class="system-online">
+            ● SYSTEM ONLINE
+        </div>
+
+        <div class="welcome">
+            WELCOME, SURVIVOR.
+        </div>
+
+        <button class="play-button" onclick="enterGame()">
+            PLAY
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     MAIN MENU
+     ================================================== -->
+
+<section id="mainInterface">
+
 <header>
-    <div class="title">APOCALYPSE 2029</div>
-    <div class="subtitle">SURVIVAL ROLEPLAYING SYSTEM</div>
+    <div class="header-title">APOCALYPSE 2029</div>
+    <div class="header-subtitle">SURVIVAL ROLEPLAYING SYSTEM</div>
 </header>
 
+
 <nav>
-    <button class="active">OVERVIEW</button>
-    <button>RULES</button>
-    <button>HOW TO PLAY</button>
-    <button>CREATE / JOIN WORLD</button>
-    <button>REFERENCE</button>
+
+    <button class="nav-button active"
+            onclick="openSection('overview', this)">
+        OVERVIEW
+    </button>
+
+    <button class="nav-button"
+            onclick="openSection('rules', this)">
+        RULES
+    </button>
+
+    <button class="nav-button"
+            onclick="openSection('howtoplay', this)">
+        HOW TO PLAY
+    </button>
+
+    <button class="nav-button"
+            onclick="openSection('world', this)">
+        CREATE / JOIN WORLD
+    </button>
+
+    <button class="nav-button"
+            onclick="openSection('reference', this)">
+        REFERENCE
+    </button>
+
 </nav>
 
-<main>
-    <div class="section-label">APOCALYPSE 2029</div>
-    <h1>OVERVIEW</h1>
-    <div class="line"></div>
 
-    <div class="placeholder">
-        CONTENT WILL APPEAR HERE
-    </div>
+<main>
+
+    <!-- OVERVIEW -->
+
+    <section id="overview"
+             class="content-section active">
+
+        <h1 class="section-title">OVERVIEW</h1>
+        <div class="section-line"></div>
+
+        <div class="placeholder">
+            OVERVIEW CONTENT WILL APPEAR HERE
+        </div>
+
+    </section>
+
+
+    <!-- RULES -->
+
+    <section id="rules"
+             class="content-section">
+
+        <h1 class="section-title">RULES</h1>
+        <div class="section-line"></div>
+
+        <div class="placeholder">
+            RULES CONTENT WILL APPEAR HERE
+        </div>
+
+    </section>
+
+
+    <!-- HOW TO PLAY -->
+
+    <section id="howtoplay"
+             class="content-section">
+
+        <h1 class="section-title">HOW TO PLAY</h1>
+        <div class="section-line"></div>
+
+        <div class="placeholder">
+            HOW TO PLAY CONTENT WILL APPEAR HERE
+        </div>
+
+    </section>
+
+
+    <!-- CREATE / JOIN WORLD -->
+
+    <section id="world"
+             class="content-section">
+
+        <h1 class="section-title">
+            CREATE / JOIN WORLD
+        </h1>
+
+        <div class="section-line"></div>
+
+        <div class="placeholder">
+            WORLD CONTENT WILL APPEAR HERE
+        </div>
+
+    </section>
+
+
+    <!-- REFERENCE -->
+
+    <section id="reference"
+             class="content-section">
+
+        <h1 class="section-title">
+            REFERENCE
+        </h1>
+
+        <div class="section-line"></div>
+
+        <div class="placeholder">
+            REFERENCE CONTENT WILL APPEAR HERE
+        </div>
+
+    </section>
+
 </main>
 
+
 <footer>
-    APOCALYPSE 2029
-    <span class="status">● SYSTEM ONLINE</span>
+
+    <button class="return-title"
+            onclick="returnToTitle()">
+        ← TITLE SCREEN
+    </button>
+
+    <span class="footer-status">
+        ● SYSTEM ONLINE
+    </span>
+
 </footer>
+
+</section>
+
+
+<script>
+
+/* ENTER THE GAME */
+
+function enterGame() {
+
+    document.getElementById("titleScreen").style.display = "none";
+
+    document.getElementById("mainInterface").style.display = "block";
+
+}
+
+
+/* RETURN TO OPENING SCREEN */
+
+function returnToTitle() {
+
+    document.getElementById("mainInterface").style.display = "none";
+
+    document.getElementById("titleScreen").style.display = "flex";
+
+}
+
+
+/* SWITCH MENU SECTIONS */
+
+function openSection(sectionId, button) {
+
+    const sections =
+        document.querySelectorAll(".content-section");
+
+    sections.forEach(section => {
+        section.classList.remove("active");
+    });
+
+
+    const buttons =
+        document.querySelectorAll(".nav-button");
+
+    buttons.forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+
+    document.getElementById(sectionId)
+            .classList.add("active");
+
+    button.classList.add("active");
+
+}
+
+</script>
 
 </body>
 </html>
