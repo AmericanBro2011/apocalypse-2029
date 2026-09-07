@@ -178,7 +178,7 @@ main {
     width: 90%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 75px 0 110px;
+    padding: 62px 0 110px;
 }
 
 .content-section {
@@ -190,7 +190,91 @@ main {
 }
 
 
-/* Placeholder is temporary until real content is added */
+/* =========================================================
+   OVERVIEW
+   ========================================================= */
+
+.overview-intro {
+    margin-bottom: 42px;
+    padding: 28px 30px;
+    background: #111111;
+    border-left: 3px solid #922828;
+    border-top: 1px solid #292929;
+    border-right: 1px solid #292929;
+    border-bottom: 1px solid #292929;
+    color: #cfcfcf;
+    line-height: 1.7;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.overview-card {
+    background: #111111;
+    border: 1px solid #292929;
+    padding: 28px 30px;
+}
+
+.overview-card.wide {
+    grid-column: 1 / -1;
+}
+
+.overview-card h2 {
+    margin: 0 0 18px;
+    color: #f0f0f0;
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+
+.overview-card h2::before {
+    content: "■ ";
+    color: #9b2b2b;
+}
+
+.overview-card p {
+    margin: 0 0 14px;
+    color: #b8b8b8;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.overview-card p:last-child {
+    margin-bottom: 0;
+}
+
+.overview-card ul {
+    margin: 12px 0 0;
+    padding-left: 20px;
+    color: #b8b8b8;
+}
+
+.overview-card li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.next-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.next-link {
+    background: #0d0d0d;
+    border: 1px solid #2a2a2a;
+    padding: 16px;
+    color: #cfcfcf;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+
+/* PLACEHOLDER FOR OTHER PAGES */
 
 .placeholder {
     min-height: 110px;
@@ -282,7 +366,19 @@ footer {
 
     main {
         width: auto;
-        padding: 45px 22px 90px;
+        padding: 40px 22px 90px;
+    }
+
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .overview-card.wide {
+        grid-column: auto;
+    }
+
+    .next-links {
+        grid-template-columns: 1fr;
     }
 
     footer {
@@ -390,32 +486,259 @@ footer {
 
 
 
-<!-- ========================================================
-     PAGE CONTENT
-
-     IMPORTANT:
-     Page names are NOT repeated here.
-     The active navigation tab serves as the page title.
-     ======================================================== -->
-
 <main>
 
 
-    <!-- OVERVIEW -->
+    <!-- ====================================================
+         OVERVIEW
+         ==================================================== -->
 
     <section
         id="overview"
         class="content-section active">
 
-        <div class="placeholder">
-            CONTENT WILL APPEAR HERE
+        <div class="overview-intro">
+            <strong>Apocalypse 2029</strong> is a tabletop-style roleplaying game set during a global zombie apocalypse.
+            One player serves as the Game Master, while the others control individual survivors.
+            The game is not built around one fixed story. Each World develops through the choices of its Game Master and players.
+        </div>
+
+
+        <div class="overview-grid">
+
+
+            <div class="overview-card wide">
+
+                <h2>WHAT IS APOCALYPSE 2029?</h2>
+
+                <p>
+                    Apocalypse 2029 is designed to be played in the general style of a traditional tabletop roleplaying game.
+                    The Game Master describes the world, controls its dangers and inhabitants, and determines how events unfold.
+                </p>
+
+                <p>
+                    Players decide what their survivors do, where they go, who they trust, and what risks they are willing to take.
+                </p>
+
+                <p>
+                    There is no single predetermined story. Each World develops through play.
+                </p>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <h2>THE WORLD</h2>
+
+                <p>
+                    Apocalypse 2029 takes place in a world based on the real Earth of 2029.
+                </p>
+
+                <p>
+                    Cities, towns, roads, regions, buildings, governments, infrastructure, and geography may all form part of play.
+                </p>
+
+                <p>
+                    The apocalypse transforms that world. Some places may remain organized. Others may collapse completely.
+                    Some communities may survive. Others may become dangerous.
+                </p>
+
+                <p>
+                    The exact condition of the world depends on the World being played.
+                </p>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <h2>HOW THE GAME WORKS</h2>
+
+                <p>
+                    A game of Apocalypse 2029 takes place inside a World.
+                </p>
+
+                <p>
+                    A World is created by a Game Master and joined by players.
+                    Within that World, players control survivors and make decisions through roleplay.
+                </p>
+
+                <p>
+                    The Game Master presents situations, locations, people, threats, and consequences.
+                    Players respond by describing what their survivors attempt to do.
+                </p>
+
+                <p>
+                    The rules determine how uncertain or dangerous actions are resolved.
+                    Over time, the World changes according to what happens during play.
+                </p>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <h2>THE GAME MASTER</h2>
+
+                <p>
+                    The Game Master is responsible for running the World.
+                </p>
+
+                <ul>
+                    <li>Describe locations and events</li>
+                    <li>Control non-player characters</li>
+                    <li>Present dangers and opportunities</li>
+                    <li>Decide what information players discover</li>
+                    <li>Manage consequences</li>
+                    <li>Create larger goals and story arcs</li>
+                    <li>Respond to unexpected player decisions</li>
+                    <li>Shape the state of the World</li>
+                </ul>
+
+                <p>
+                    The Game Master does not simply read a predetermined story.
+                    The World is meant to respond to the players.
+                </p>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <h2>THE PLAYERS</h2>
+
+                <p>
+                    Each player controls a survivor.
+                </p>
+
+                <ul>
+                    <li>What their survivor says</li>
+                    <li>What their survivor attempts</li>
+                    <li>Where they go</li>
+                    <li>Who they trust</li>
+                    <li>What they carry</li>
+                    <li>What risks they accept</li>
+                    <li>What goals they pursue</li>
+                </ul>
+
+                <p>
+                    Players are not expected to follow a single predetermined path.
+                    Their decisions help create the story of the World.
+                </p>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <h2>WORLDS</h2>
+
+                <p>
+                    A World is an individual Apocalypse 2029 game.
+                </p>
+
+                <p>
+                    Each World may have its own Game Master, players, survivors, starting location, history,
+                    major events, settlements, factions, goals, and consequences.
+                </p>
+
+                <p>
+                    Different Worlds can begin in the same location and develop in completely different ways.
+                </p>
+
+                <p>
+                    Creating a World does not create a match.
+                    It creates an ongoing roleplaying setting.
+                </p>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <h2>SURVIVORS</h2>
+
+                <p>
+                    A survivor is a player's character within a World.
+                </p>
+
+                <p>
+                    Survivors may differ in background, skills, personality, equipment, relationships,
+                    injuries, knowledge, and experience.
+                </p>
+
+                <p>
+                    A survivor is more than a set of numbers.
+                    The player decides who that person is and how that person responds to the collapse of the world around them.
+                </p>
+
+            </div>
+
+
+            <div class="overview-card wide">
+
+                <h2>THE LARGER NARRATIVE</h2>
+
+                <p>
+                    Apocalypse 2029 is not built around one universal final objective.
+                </p>
+
+                <p>
+                    Instead, Worlds may develop through major goals or narrative arcs.
+                    A group may spend part of its story trying to escape an infected city.
+                    Later, its goal may become finding shelter, protecting a settlement,
+                    locating someone, dealing with a rival group, or discovering what happened elsewhere.
+                </p>
+
+                <p>
+                    The larger story grows from the events of the World.
+                </p>
+
+            </div>
+
+
+            <div class="overview-card wide">
+
+                <h2>WHAT MAKES APOCALYPSE 2029 DIFFERENT?</h2>
+
+                <p>
+                    Apocalypse 2029 is intended to combine tabletop roleplaying, survival, exploration,
+                    real-world geography, persistent Worlds, player-driven decisions, Game Master freedom,
+                    detailed locations, and long-form storytelling.
+                </p>
+
+                <p>
+                    The goal is not simply to defeat zombies.
+                    The goal is to roleplay what happens when ordinary human decisions are placed inside extraordinary circumstances.
+                </p>
+
+            </div>
+
+
+            <div class="overview-card wide">
+
+                <h2>WHERE TO GO NEXT</h2>
+
+                <div class="next-links">
+                    <div class="next-link">HOW TO PLAY</div>
+                    <div class="next-link">RULES</div>
+                    <div class="next-link">CREATE / JOIN WORLD</div>
+                    <div class="next-link">REFERENCE</div>
+                </div>
+
+            </div>
+
+
         </div>
 
     </section>
 
 
 
-    <!-- RULES -->
+    <!-- ====================================================
+         RULES
+         ==================================================== -->
 
     <section
         id="rules"
@@ -429,7 +752,9 @@ footer {
 
 
 
-    <!-- HOW TO PLAY -->
+    <!-- ====================================================
+         HOW TO PLAY
+         ==================================================== -->
 
     <section
         id="howtoplay"
@@ -443,7 +768,9 @@ footer {
 
 
 
-    <!-- CREATE / JOIN WORLD -->
+    <!-- ====================================================
+         CREATE / JOIN WORLD
+         ==================================================== -->
 
     <section
         id="world"
@@ -457,7 +784,9 @@ footer {
 
 
 
-    <!-- REFERENCE -->
+    <!-- ====================================================
+         REFERENCE
+         ==================================================== -->
 
     <section
         id="reference"
@@ -501,12 +830,6 @@ footer {
 
 async function enterGame() {
 
-    /*
-       Request fullscreen immediately after PLAY is clicked.
-       Browsers require the user to initiate fullscreen,
-       so PLAY is the ideal trigger.
-    */
-
     try {
 
         const page = document.documentElement;
@@ -522,21 +845,11 @@ async function enterGame() {
     }
 
     catch (error) {
-
-        /*
-           If fullscreen is blocked for any reason,
-           the game still continues normally.
-        */
-
         console.log("Fullscreen unavailable.");
-
     }
 
-
     document.getElementById("titleScreen").style.display = "none";
-
     document.getElementById("mainInterface").style.display = "block";
-
 }
 
 
@@ -547,9 +860,7 @@ async function enterGame() {
 function returnToTitle() {
 
     document.getElementById("mainInterface").style.display = "none";
-
     document.getElementById("titleScreen").style.display = "flex";
-
 }
 
 
@@ -566,7 +877,6 @@ function openSection(sectionId, clickedButton) {
         section.classList.remove("active");
     });
 
-
     const buttons =
         document.querySelectorAll(".nav-button");
 
@@ -574,14 +884,11 @@ function openSection(sectionId, clickedButton) {
         button.classList.remove("active");
     });
 
-
     document
         .getElementById(sectionId)
         .classList.add("active");
 
-
     clickedButton.classList.add("active");
-
 }
 
 </script>
