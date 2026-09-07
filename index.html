@@ -21,6 +21,7 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Hide scrollbars while keeping scrolling functional */
 html {
     scrollbar-width: none;
 }
@@ -35,7 +36,9 @@ button {
 }
 
 
-/* TITLE SCREEN */
+/* =========================================================
+   TITLE SCREEN
+========================================================= */
 
 #titleScreen {
     width: 100%;
@@ -106,7 +109,9 @@ button {
 }
 
 
-/* MAIN INTERFACE */
+/* =========================================================
+   MAIN INTERFACE
+========================================================= */
 
 #mainInterface {
     display: none;
@@ -173,7 +178,9 @@ nav {
 }
 
 
-/* CONTENT */
+/* =========================================================
+   CONTENT
+========================================================= */
 
 main {
     width: 90%;
@@ -244,7 +251,9 @@ main {
 }
 
 
-/* NEXT BUTTONS */
+/* =========================================================
+   WHERE TO GO NEXT
+========================================================= */
 
 .next-links {
     display: grid;
@@ -300,7 +309,9 @@ main {
 }
 
 
-/* MOBILE */
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 850px) {
 
@@ -362,7 +373,9 @@ main {
 <body>
 
 
-<!-- TITLE SCREEN -->
+<!-- =======================================================
+     TITLE SCREEN
+======================================================= -->
 
 <section id="titleScreen">
 
@@ -396,7 +409,9 @@ main {
 
 
 
-<!-- MAIN INTERFACE -->
+<!-- =======================================================
+     MAIN INTERFACE
+======================================================= -->
 
 <section id="mainInterface">
 
@@ -458,30 +473,25 @@ main {
 <main>
 
 
-<!-- OVERVIEW -->
+<!-- =======================================================
+     OVERVIEW
+======================================================= -->
 
 <section id="overview" class="content-section active">
 
     <div class="overview-grid">
 
 
+        <!-- WHAT IS APOCALYPSE 2029 -->
+
         <div class="overview-card wide">
 
             <h2>WHAT IS APOCALYPSE 2029?</h2>
 
             <p>
-                <strong>Apocalypse 2029</strong> is a tabletop-style roleplaying game set during a global zombie apocalypse.
-                One player serves as the Game Master, while the others control individual survivors.
-                The game is not built around one fixed story. Each World develops through the choices of its Game Master and players.
-            </p>
-
-            <p>
-                Apocalypse 2029 is designed to be played in the general style of a traditional tabletop roleplaying game.
-                The Game Master describes the world, controls its dangers and inhabitants, and determines how events unfold.
-            </p>
-
-            <p>
-                Players decide what their survivors do, where they go, who they trust, and what risks they are willing to take.
+                <strong>Apocalypse 2029</strong> is designed to be played in the general style of a traditional tabletop roleplaying game.
+                The Game Master describes the world, controls its dangers and inhabitants, and determines how events unfold,
+                while the survivors are controlled by the players themselves.
             </p>
 
             <p>
@@ -491,6 +501,8 @@ main {
         </div>
 
 
+
+        <!-- THE WORLD -->
 
         <div class="overview-card">
 
@@ -519,6 +531,8 @@ main {
         </div>
 
 
+
+        <!-- HOW THE GAME WORKS -->
 
         <div class="overview-card">
 
@@ -550,6 +564,8 @@ main {
 
 
 
+        <!-- GAME MASTER -->
+
         <div class="overview-card">
 
             <h2>THE GAME MASTER</h2>
@@ -578,6 +594,8 @@ main {
 
 
 
+        <!-- PLAYERS -->
+
         <div class="overview-card">
 
             <h2>THE PLAYERS</h2>
@@ -604,6 +622,8 @@ main {
         </div>
 
 
+
+        <!-- WORLDS -->
 
         <div class="overview-card">
 
@@ -633,6 +653,8 @@ main {
 
 
 
+        <!-- SURVIVORS -->
+
         <div class="overview-card">
 
             <h2>SURVIVORS</h2>
@@ -655,6 +677,8 @@ main {
         </div>
 
 
+
+        <!-- LARGER NARRATIVE -->
 
         <div class="overview-card wide">
 
@@ -679,6 +703,8 @@ main {
 
 
 
+        <!-- WHAT MAKES IT DIFFERENT -->
+
         <div class="overview-card wide">
 
             <h2>WHAT MAKES APOCALYPSE 2029 DIFFERENT?</h2>
@@ -699,6 +725,8 @@ main {
         </div>
 
 
+
+        <!-- WHERE TO GO NEXT -->
 
         <div class="overview-card wide">
 
@@ -741,7 +769,9 @@ main {
 
 
 
-<!-- RULES -->
+<!-- =======================================================
+     RULES
+======================================================= -->
 
 <section id="rules" class="content-section">
 
@@ -753,7 +783,9 @@ main {
 
 
 
-<!-- HOW TO PLAY -->
+<!-- =======================================================
+     HOW TO PLAY
+======================================================= -->
 
 <section id="howtoplay" class="content-section">
 
@@ -765,7 +797,9 @@ main {
 
 
 
-<!-- CREATE / JOIN WORLD -->
+<!-- =======================================================
+     CREATE / JOIN WORLD
+======================================================= -->
 
 <section id="world" class="content-section">
 
@@ -777,7 +811,9 @@ main {
 
 
 
-<!-- REFERENCE -->
+<!-- =======================================================
+     REFERENCE
+======================================================= -->
 
 <section id="reference" class="content-section">
 
@@ -795,6 +831,8 @@ main {
 
 
 <script>
+
+/* ENTER GAME + REQUEST FULLSCREEN */
 
 async function enterGame() {
 
@@ -821,6 +859,8 @@ async function enterGame() {
 }
 
 
+/* SWITCH MENU SECTIONS */
+
 function openSection(sectionId) {
 
     const sections =
@@ -829,6 +869,7 @@ function openSection(sectionId) {
     sections.forEach(function(section) {
         section.classList.remove("active");
     });
+
 
     const buttons =
         document.querySelectorAll(".nav-button");
@@ -843,9 +884,11 @@ function openSection(sectionId) {
 
     });
 
+
     document
         .getElementById(sectionId)
         .classList.add("active");
+
 
     window.scrollTo({
         top: 0,
